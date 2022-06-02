@@ -37,8 +37,19 @@ A few examples of useful commands and/or tasks.
 # And keep this in mind
 ```
 
+## Detailed Breakdown
+
+### Light_Level.cs
+A method to take solar output (ie. light) and use this data to predict when the next sunrise will occur. 
+
+Though the "day length" may be accessed in the settings in Space Engineers (herein referred to as "SE"), the global day length doesn't neccesarily apply in space where the situation may change.
+
+This simple program assumes a regular orbit and no deviation that would alter the prediction long-term and is ultimately a little bit of fun.
+
+The SolarPanel.CurrentOutput has a degree "jitter", in testing, whereby it alternates between 0 and the actual value. A degree of resiliance was built in to the script to account for this. 
+
 ## Additional Documentation and Acknowledgments
 
 Credit to https://github.com/mrdaemon for the working `.csproj` file.
 
-My scripting could not have been completed without the exhaustive use of Malware's Development Kit for SE: https://github.com/malware-dev/MDK-SE
+My scripting could not have been completed without the exhaustive use of Malware's Documentation contained here: https://github.com/malware-dev/MDK-SE/wiki/Quick-Introduction-to-Space-Engineers-Ingame-Scripts

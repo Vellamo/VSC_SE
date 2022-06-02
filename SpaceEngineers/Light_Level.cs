@@ -32,6 +32,8 @@ public Program()
 // Basic Declaration of public variables (used across the code)
 // =======================================================================================
 
+// CHANGE FROM STATIC TO MORE MALLABLE AND USE NEW METHOD TO DETERMINE FIRST DAY/NIGHT LENGTH & JITTER
+
 static class CraitTimer
 {
     public static int daylength = 0;    
@@ -77,6 +79,8 @@ public void Main()
 // Initialisation of variables
 // =======================================================================================
 
+// HANDLE NULL RETURNS AND USE CUSTOM DATA TO SPECIFY PREFIX(ES)
+
     Echo("Init began");
     var MyLCD = GridTerminalSystem.GetBlockWithName("LCDClock") as IMyTextPanel;
     string display = "Current lighting: \n";
@@ -90,6 +94,8 @@ public void Main()
     List<IMySolarPanel> SolarGroup = new List<IMySolarPanel>();
     GridTerminalSystem.GetBlocksOfType<IMySolarPanel>(SolarGroup);
     var SolarPanel = SolarGroup[0];
+
+// MAKE PISTON USAGE OPTIONAL via CUSTOM DATA
 
     Echo("Init 3 : Pistons");
     IMyBlockGroup PistonGroup_1 = GridTerminalSystem.GetBlockGroupWithName("TowerPistons");
@@ -158,7 +164,7 @@ public void Main()
             if (CraitTimer.NightMax < CraitTimer.nightlength)
                 {
                     CraitTimer.NightMax = CraitTimer.nightlength;
-                    display += "Night length exceeds expected! Calibrating..";
+                    display += "Night length excee expected! Calibrating..";
                 }
             else
                 {
@@ -184,7 +190,7 @@ public void Main()
         CraitTimer.daylength += 100;
         CraitTimer.cycles++;
 
-        for (int i = 0; i < LightCount; i++)
+        for (int i = 2; i < LightCount; i++)
             {
                 LightGroup[i].Intensity = 3;
             }
@@ -228,7 +234,7 @@ public void Main()
          }
     else
         {
-            Echo("Couldn't find the LCD to print to, piss");
+            Echo("Couldn't find the LCD to print to");
             return;
         }
 
