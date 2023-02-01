@@ -1,6 +1,6 @@
 # Space Engineer Scripting 
 
-The following repository is a container of various (Space-Engineer specific) C# scripts.
+The following repository is a container of various (Space-Engineer specific) C# scripts. At the moment it contains a predictive script that takes the input from solar panels to calculate the length of a "Day" and "Night" based on your (assumed synchronous) orbit.
 
 ## Getting Started
 
